@@ -1,0 +1,65 @@
+name: WorkingSlots
+version: 0.5
+description: Loads Presets in the Working Slots
+author: Bootscreen
+website: http://bootscreen.eu
+softdepend: [Spout]
+
+main:  me.bootscreen.workingslots.WorkingSlots
+
+commands:
+  ws:
+    description: Working Slots commands
+    usage: |
+           Usage:
+           /<command> <preset> - loads the Preset with the given Number (0-9)
+           /<command> save <preset> - saves the current Working Slots under the given Number as Preset
+    
+permissions:
+    workingslots.*:
+        description: Allows Player to load and save every Preset
+        children:
+            workingslots.0: true
+            workingslots.1: true
+            workingslots.2: true
+            workingslots.3: true
+            workingslots.4: true
+            workingslots.5: true
+            workingslots.6: true
+            workingslots.7: true
+            workingslots.8: true
+            workingslots.9: true
+            workingslots.save: true
+    workingslots.0:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.1:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.2:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.3:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.4:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.5:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.6:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.7:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.8:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.9:
+        description: Allows Player to load the Preset
+        default: op
+    workingslots.save:
+        description: Allows Player to save Presets
+        default: op
