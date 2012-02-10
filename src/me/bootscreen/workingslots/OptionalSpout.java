@@ -10,7 +10,6 @@ import org.getspout.spoutapi.keyboard.Keyboard;
 * handels the SpoutKeyRegistration
 * 
 * @author Bootscreen
-* @version 0.5
 * 
 */
 

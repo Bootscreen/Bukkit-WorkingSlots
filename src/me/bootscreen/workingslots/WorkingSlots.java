@@ -1,28 +1,32 @@
 package me.bootscreen.workingslots;
 
+import java.util.logging.Logger;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 /**
 * WorkingSlots for CraftBukkit/Spout
 *
 * @author Bootscreen
-* @version 0.5
 * 
 */
 
 public class WorkingSlots extends JavaPlugin{
-
-	private FileManager fileManager = new FileManager();
+	public final Logger log = Logger.getLogger("Minecraft");
 	
+	PluginDescriptionFile plugdisc;
+	
+	private FileManager fileManager = new FileManager();
+		
 	@Override
 	public void onDisable() {
-		System.out.println("WorkingSlots disabled.");
-		
+		log.info("[" + plugdisc.getName() + "] Version " + plugdisc.getVersion() + " disabled.");		
 	}
 
 	@Override
@@ -30,17 +34,19 @@ public class WorkingSlots extends JavaPlugin{
 		
 		fileManager.createConfig();
 		
+		plugdisc = this.getDescription();
+		
 		Plugin plugin = this.getServer().getPluginManager().getPlugin("Spout");
 		
 		if(plugin != null)
 		{
 			OptionalSpout os = new OptionalSpout();
 			os.registerspoutkeys(this);
-			System.out.println("WorkingSlots with SpoutKeys enabled.");
+			log.info("[" + plugdisc.getName() + "] Version " + plugdisc.getVersion() + " with SpoutKeys enabled.");
 		}
 		else
 		{
-			System.out.println("WorkingSlots enabled.");
+			log.info("[" + plugdisc.getName() + "] Version " + plugdisc.getVersion() + " enabled.");
 		}
 	}
 	
@@ -57,7 +63,12 @@ public class WorkingSlots extends JavaPlugin{
 			
 			if(cmd.getName().equalsIgnoreCase("ws"))
 			{
-				if(args.length == 1)
+				if(args.length == 0)
+				{
+					player.sendMessage("[" + plugdisc.getName() + "] Version " + plugdisc.getVersion() + ".");
+					succeed = false;
+				}
+				else if(args.length == 1)
 				{
 					try
 					{
@@ -85,6 +96,7 @@ public class WorkingSlots extends JavaPlugin{
 					}
 					catch(Exception e)
 					{
+						log.info(plugdisc.getName() + " " + plugdisc.getVersion() + " Error in the try/catch block of the Preset loading command.");
 						e.printStackTrace();
 						succeed = false;
 					}
@@ -122,13 +134,13 @@ public class WorkingSlots extends JavaPlugin{
 						}
 						catch(Exception e)
 						{
+							log.info(plugdisc.getName() + " " + plugdisc.getVersion() + " Error in the try/catch block of the Preset saving command.");
 							e.printStackTrace();
 							succeed = false;
 						}
 					}
 					else
 					{
-						player.sendMessage(ChatColor.RED + "[WorkingSlots] |"+args[0]+"|");
 						succeed = false;
 					}
 				}
@@ -138,9 +150,13 @@ public class WorkingSlots extends JavaPlugin{
 				}
 			}
 		}
+		else
+		{
+			log.info("[" + plugdisc.getName() + "] the /ws commands can only be used by a Player.");
+			succeed = true;
+		}
 		
 		return succeed;
-		
 	}
 
 }
