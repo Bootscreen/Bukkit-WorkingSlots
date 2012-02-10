@@ -101,7 +101,7 @@ public class FileManager {
 				switch(number)
 				{
 					case 0:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_0", wert);
 						config.save();
 						return true;
 					case 1:
@@ -109,35 +109,35 @@ public class FileManager {
 						config.save();
 						return true;
 					case 2:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_2", wert);
 						config.save();
 						return true;
 					case 3:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_3", wert);
 						config.save();
 						return true;
 					case 4:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_4", wert);
 						config.save();
 						return true;
 					case 5:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_5", wert);
 						config.save();
 						return true;
 					case 6:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_6", wert);
 						config.save();
 						return true;
 					case 7:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_7", wert);
 						config.save();
 						return true;
 					case 8:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_8", wert);
 						config.save();
 						return true;
 					case 9:
-						config.setProperty("Preset_1", wert);
+						config.setProperty("Preset_9", wert);
 						config.save();
 						return true;
 					default:											
