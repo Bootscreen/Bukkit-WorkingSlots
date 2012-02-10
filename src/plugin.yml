@@ -1,5 +1,5 @@
 name: WorkingSlots
-version: 0.5
+version: 0.5.2
 description: Loads Presets in the Working Slots
 author: Bootscreen
 website: http://bootscreen.eu
@@ -12,6 +12,7 @@ commands:
     description: Working Slots commands
     usage: |
            Usage:
+           /<command> - shows the Version and the Usage
            /<command> <preset> - loads the Preset with the given Number (0-9)
            /<command> save <preset> - saves the current Working Slots under the given Number as Preset
     
