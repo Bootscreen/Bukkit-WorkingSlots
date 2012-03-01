@@ -21,7 +21,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class WorkingSlots extends JavaPlugin{
 	public final Logger log = Logger.getLogger("Minecraft");
-	private final OptionalSpout os = new OptionalSpout(this);
 	
 	PluginDescriptionFile plugdisc;
 
@@ -44,6 +43,7 @@ public class WorkingSlots extends JavaPlugin{
 
 		if(plugin != null)
 		{
+			OptionalSpout os = new OptionalSpout(this);
 			os.registerspoutkeys(this);
 			log.info("[" + plugdisc.getName() + "] Version " + plugdisc.getVersion() + " with SpoutKeys enabled.");
 		}
