@@ -4,6 +4,7 @@ description: Loads Presets in the Working Slots
 author: Bootscreen
 website: http://bootscreen.eu
 softdepend: [Spout]
+dev-url: http://dev.bukkit.org/server-mods/workingslot-presets/
 
 main:  me.bootscreen.workingslots.WorkingSlots
 
